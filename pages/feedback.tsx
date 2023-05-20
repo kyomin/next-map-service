@@ -8,7 +8,7 @@ import { VscFeedback } from 'react-icons/vsc';
 import Header from '@/components/common/Header';
 import styles from '../styles/header.module.scss';
 
-export default function Home() {
+export default function Feedback() {
   return (
     <Fragment>
       <Header
