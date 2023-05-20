@@ -1,17 +1,14 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import styles from '../../styles/header.module.scss';
+import { AiOutlineShareAlt } from 'react-icons/ai';
+import { VscFeedback } from 'react-icons/vsc';
 
-interface Props {
-  rightElements?: React.ReactElement[];
-}
-
-const Header = ({ rightElements }: Props) => {
+const Header = () => {
   return (
-    <header className={styles.header}>
-      <div className={styles.flexItem}>
-        <Link href="/" className={styles.box}>
+    <header className="header">
+      <div className="flexItem">
+        <Link href="/" className="box">
           <Image
             src="/next-logo.png"
             width={110}
@@ -21,7 +18,21 @@ const Header = ({ rightElements }: Props) => {
           />
         </Link>
       </div>
-      {rightElements && <div className={styles.flexItem}>{rightElements}</div>}
+      <div className="flexItem">
+        <button
+          onClick={() => {
+            alert('복사');
+          }}
+          className="box"
+          style={{ marginRight: 8 }}
+          key="copy-button"
+        >
+          <AiOutlineShareAlt size={20} />
+        </button>        
+        <Link href="/feedback" className="box" key="link-button">
+          <VscFeedback size={20} />
+        </Link>        
+      </div>
     </header>
   );
 };
